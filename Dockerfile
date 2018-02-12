@@ -4,7 +4,7 @@ RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y apt-utils && \
     apt-get install -y openjdk-8-jre-headless wget bash && \
-    apt-get install -y librdkafka-dev build-essentials && \
+    apt-get install -y librdkafka-dev build-essential && \
     apt-get install -y python3 python3-dev python3-pip && \
     pip install confluent-kafka && \
     apt-get clean -y && \
