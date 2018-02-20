@@ -9,4 +9,7 @@ RUN apt-get update && \
     pip install confluent-kafka && \
     apt-get clean -y && \
     wget http://mirror.ibcp.fr/pub/apache/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz -P / && \
-    (cd / ; tar xfz spark-2.2.0-bin-hadoop2.7.tgz ; rm spark-2.2.0-bin-hadoop2.7.tgz) 
+    (cd / ; tar xfz spark-2.2.0-bin-hadoop2.7.tgz ; rm spark-2.2.0-bin-hadoop2.7.tgz) && \
+    # Install other python packages
+    /usr/local/bin/pip install -U pip && \
+    /usr/local/bin/pip install -U pillow
