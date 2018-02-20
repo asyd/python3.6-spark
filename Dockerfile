@@ -12,4 +12,4 @@ RUN apt-get update && \
     (cd / ; tar xfz spark-2.2.0-bin-hadoop2.7.tgz ; rm spark-2.2.0-bin-hadoop2.7.tgz) && \
     # Install other python packages
     /usr/local/bin/pip install -U pip && \
-    /usr/local/bin/pip install -U pillow
+    /usr/local/bin/pip install -U pillow pytesseract
