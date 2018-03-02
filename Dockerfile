@@ -12,6 +12,6 @@ RUN apt-get update && \
     (cd / ; tar xfz spark-2.2.0-bin-hadoop2.7.tgz ; rm spark-2.2.0-bin-hadoop2.7.tgz) && \
     # Install other python packages
     /usr/local/bin/pip install -U pip && \
-    /usr/local/bin/pip install -U pillow pytesseract opencv-python && \
+    /usr/local/bin/pip install -U pillow pytesseract opencv-python requests && \
     # Install tesseract
     apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-enm tesseract-ocr-fra
