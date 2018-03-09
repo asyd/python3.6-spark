@@ -1,5 +1,8 @@
 FROM python:3.6-stretch
 
+ARG GITLAB_USER
+ARG GITLAB_TOKEN
+
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y apt-utils && \
