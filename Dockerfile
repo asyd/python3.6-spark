@@ -20,5 +20,5 @@ RUN apt-get update && \
     apt-get install -y tesseract-ocr tesseract-ocr-eng tesseract-ocr-enm tesseract-ocr-fra && \
     # Add cpgcopy
     echo -e "machine gitlab.com\nlogin ${GITLAB_USER}\npassword ${GITLAB_TOKEN}" > ~/.netrc && \ 
-    /usr/local/bin/pip install cython numpy pandas && \
-    /usr/local/bin/pip install git+https://gitlab.com/bigdatamedia/extra/cpgcopy.git 
+    /usr/local/bin/pip install cython numpy pandas pgcopy 
+    # /usr/local/bin/pip install git+https://gitlab.com/bigdatamedia/extra/cpgcopy.git 
