@@ -3,6 +3,9 @@ FROM python:3.6-stretch
 ARG GITLAB_USER
 ARG GITLAB_TOKEN
 
+ARG SPARK_VERSION=2.2.1
+ARG SPARK_IMAGE=http://mirror.ibcp.fr/pub/apache/spark/spark-${SPARK_VERSION}/spark-${SPARK_VERSION}-bin-hadoop2.7.tgz
+
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y apt-utils && \
@@ -11,8 +14,8 @@ RUN apt-get update && \
     apt-get install -y python3 python3-dev python3-pip postgresql-server-dev-9.6 && \
     pip install confluent-kafka && \
     apt-get clean -y && \
-    wget http://mirror.ibcp.fr/pub/apache/spark/spark-2.2.0/spark-2.2.0-bin-hadoop2.7.tgz -P / && \
-    (cd / ; tar xfz spark-2.2.0-bin-hadoop2.7.tgz ; rm spark-2.2.0-bin-hadoop2.7.tgz) && \
+    wget $SPARK_IMAGE -P / && \
+    (cd / ; tar xfz spark-${SPARK_VERSION}-bin-hadoop2.7.tgz ; rm spark-${SPARK_VERSION}-bin-hadoop2.7.tgz) && \
     # Install other python packages
     /usr/local/bin/pip install -U pip && \
     /usr/local/bin/pip install -U pillow pytesseract opencv-python requests beautifulsoup4 tensorflow && \
